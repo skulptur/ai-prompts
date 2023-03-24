@@ -1,14 +1,21 @@
+import { OPENAI_API_KEY } from './keys'
 import { getSummaryPrompt } from '../../src'
-console.log(getSummaryPrompt('hello world'))
-// import { Configuration, OpenAIApi } from 'openai'
+import { Configuration, OpenAIApi } from 'openai'
 
-// const configuration = new Configuration({
-//   apiKey: process.env.OPENAI_API_KEY,
-// })
-// const openai = new OpenAIApi(configuration)
+const configuration = new Configuration({
+  apiKey: OPENAI_API_KEY,
+})
 
-// const completion = await openai.createChatCompletion({
-//   model: 'gpt-3.5-turbo',
-//   messages: [{ role: 'user', content: 'Hello world' }],
-// })
-// console.log(completion.data.choices[0].message)
+const openai = new OpenAIApi(configuration)
+
+const getCompletion = async () => {
+  const completion = await openai.createChatCompletion({
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'user', content: 'Hello world' }],
+  })
+  console.log(completion)
+}
+
+// getCompletion().then(console.log)
+
+console.log('hi')

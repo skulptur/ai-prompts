@@ -6,10 +6,13 @@
   "author": "skulptur",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "execute": "ts-node ./src/index.ts"
   },
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/pngjs": "^6.0.1",
+    "dotenv": "^16.0.3",
     "nodemon": "^2.0.4",
     "openai": "^3.2.1",
     "pngjs": "^7.0.0",
